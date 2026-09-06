@@ -1,3 +1,16 @@
+
+1 of 1,633
+New Version of webpage_Sep_5
+Inbox
+
+Jianqin wang
+Attachments
+5:25 PM (3 hours ago)
+to me, Yi
+
+
+ One attachment
+  •  Scanned by Gmail
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -204,6 +217,47 @@
   .team-role.blue{ color:var(--blue); background:rgba(79,168,255,0.08); border:1px solid rgba(79,168,255,0.3); }
   .team-card p{ color:var(--ink-dim); font-size:14.5px; }
 
+  /* PROJECTS */
+  .project-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:26px; margin-top:34px;
+  }
+  @media (max-width:820px){ .project-grid{ grid-template-columns:1fr; } }
+  .project-card{
+    background:var(--card); border:1px solid var(--line); border-radius:16px;
+    overflow:hidden; display:flex; flex-direction:column;
+  }
+  .project-video{
+    position:relative; width:100%; aspect-ratio:16/9; background:#000;
+    border-bottom:1px solid var(--line); overflow:hidden;
+    display:block; text-decoration:none;
+  }
+  .project-video img{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+    transition:transform .25s ease, opacity .25s ease;
+  }
+  .project-video:hover img{ transform:scale(1.04); opacity:.75; }
+  .project-video .play-btn{
+    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    width:64px; height:64px; border-radius:50%;
+    background:rgba(11,18,32,0.75); border:1.5px solid rgba(255,255,255,0.35);
+    display:flex; align-items:center; justify-content:center;
+    transition:background .2s ease, border-color .2s ease;
+  }
+  .project-video:hover .play-btn{ background:rgba(255,176,32,0.85); border-color:var(--amber); }
+  .project-video .play-btn svg{ width:22px; height:22px; margin-left:3px; fill:#fff; }
+  .project-video:hover .play-btn svg{ fill:#181206; }
+  .project-body{ padding:22px 22px 26px; display:flex; flex-direction:column; gap:12px; flex:1;}
+  .project-eyebrow{ font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.12em; color:var(--ink-dimmer); text-transform:uppercase;}
+  .project-body h3{ font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:21px; color:var(--ink); }
+  .project-body p{ color:var(--ink-dim); font-size:14.5px; }
+  .project-link{
+    align-self:flex-start; margin-top:4px;
+    font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:.05em;
+    color:var(--teal); text-decoration:none; display:inline-flex; align-items:center; gap:6px;
+    border-bottom:1px solid rgba(52,228,199,0.4); padding-bottom:2px;
+  }
+  .project-link:hover{ color:var(--amber); border-color:rgba(255,176,32,0.5); }
+
   /* EXHIBITS */
   .exhibits-wrap{ position:relative; margin-top:42px; }
   .exhibits-rail{
@@ -346,6 +400,7 @@
       <a href="#about">About</a>
       <a href="#mission">Mission</a>
       <a href="#team">Team</a>
+      <a href="#projects">Projects</a>
       <a href="#exhibits">Exhibits</a>
       <a href="#details" class="btn btn-primary" style="padding:9px 18px; font-size:13.5px;">Event details</a>
     </nav>
@@ -445,7 +500,7 @@
       <div class="team-avatar teal">ZM</div>
       <div>
         <div class="team-name">Zach Ma</div>
-        <span class="team-role teal">Vice President</span>
+        <span class="team-role teal">Member</span>
       </div>
       <p>Supports the President in day-to-day planning and steps in to lead when needed. Helps organize logistics for each fair &mdash; station setup, volunteer scheduling, and supply checklists &mdash; and helps troubleshoot exhibits on event day.</p>
     </div>
@@ -468,9 +523,42 @@
   </div>
 </section>
 
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">// 04 &nbsp; ElecSpark PROJECTS</div>
+  <h2 class="section-title">What the ElecSpark been building.</h2>
+  <p class="section-sub">Beyond running the fair, ElecSpark Initiative work on their own engineering projects &mdash; self-taught, tested, and rebuilt from scratch. Here are two has documented on video.</p>
+  <div class="project-grid">
+    <div class="project-card">
+      <a class="project-video" href="https://www.youtube.com/watch?v=tHLgt2yYjH8" target="_blank" rel="noopener" aria-label="Watch Stove Guard project video on YouTube">
+        <img src="https://img.youtube.com/vi/tHLgt2yYjH8/hqdefault.jpg" alt="Stove Guard project thumbnail" loading="lazy">
+        <span class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+      </a>
+      <div class="project-body">
+        <div class="project-eyebrow">Hardware &middot; Software &middot; Mobile App</div>
+        <h3>Stove Guard</h3>
+        <p>A non-invasive electrical current-sensing system that detects whether an electric stove is on and sends its status wirelessly to a mobile app in real time. Building it meant learning C++, circuit theory, and Flutter from scratch, and the team went on to submit the project proposal to the FirstBuild innovation platform.</p>
+        <a class="project-link" href="https://www.youtube.com/watch?v=tHLgt2yYjH8" target="_blank" rel="noopener">Watch on YouTube &rarr;</a>
+      </div>
+    </div>
+    <div class="project-card">
+      <a class="project-video" href="https://www.youtube.com/watch?v=5JEMj-Yf7uQ" target="_blank" rel="noopener" aria-label="Watch Wireless Power Transfer System project video on YouTube">
+        <img src="https://img.youtube.com/vi/5JEMj-Yf7uQ/hqdefault.jpg" alt="Wireless Power Transfer System project thumbnail" loading="lazy">
+        <span class="play-btn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+      </a>
+      <div class="project-body">
+        <div class="project-eyebrow">Electrical Engineering &middot; Resonant Coupling</div>
+        <h3>Wireless Power Transfer System</h3>
+        <p>A resonant inductive wireless power-transfer system designed and built from first principles. Through repeated testing and redesign of the coils and driving circuitry, the team pushed the transmission distance from roughly 10&nbsp;cm out to 92&nbsp;cm &mdash; a project that grew out of a shared curiosity about electrical engineering and a lot of persistence through failed prototypes.</p>
+        <a class="project-link" href="https://www.youtube.com/watch?v=5JEMj-Yf7uQ" target="_blank" rel="noopener">Watch on YouTube &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- EXHIBITS -->
 <section id="exhibits">
-  <div class="section-label">// 04 &nbsp; EXHIBIT MAP</div>
+  <div class="section-label">// 05 &nbsp; EXHIBIT MAP</div>
   <h2 class="section-title">Seven stations. Real circuits. Real science.</h2>
   <p class="section-sub">Walk the full loop in an afternoon, or camp out at the one that grabs your kid the most &mdash; every station runs all day, every fair.</p>
 
@@ -691,7 +779,8 @@
     ElecSpark Initiative
   </div>
   <div class="fair-line">ElecSpark STEM Discovery Fair Series &middot; Peoria Community Public Places</div>
-  <div class="org">Founded by David Wang, Founder &amp; President &middot; &nbsp;&nbsp;Shutian Hu, Co-Founder &middot; &nbsp;&nbsp;Chloe Deng &amp;Zack Ma, Members</div>
+  <div class="org">Founded by David Wang, Founder &amp; President &middot; &nbsp;&nbsp;Chloe Deng &amp;Zack Ma, &amp;Alice Hu Members</div>
 </footer>
 
 </body>
+</html>
